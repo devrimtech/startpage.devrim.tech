@@ -1,0 +1,167 @@
+/* Fonts */
+@font-face {
+  font-family: Roboto;
+  src: url("../fonts/Roboto-Regular.ttf");
+}
+
+@font-face {
+  font-family: Roboto-Light;
+  src: url("../fonts/Roboto-Light.ttf");
+}
+
+/* Animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Elements */
+a {
+  text-decoration: none;
+}
+
+html {
+  height: 100%;
+  font-weight: 300;
+  opacity: 0.8;
+}
+
+body {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  background: url("/243332.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-color: #221e1f;
+  height: 90%;
+}
+
+main {
+  animation-duration: 1s;
+  animation-name: fade-in;
+  font-family: Roboto-Light, sans-serif;
+  margin: 10px;
+  width: 100%;
+}
+
+/* Classes */
+.links-container {
+  width: 50%;
+}
+
+.link-section {
+  background-color: #353535;
+  padding: 2px;
+  box-shadow: 0px 0px 15px 2px #111;
+}
+
+.link-section-title {
+  font-size: 15px;
+  margin: 10px;
+  font-weight: normal;
+}
+
+.link-list {
+  padding: 0;
+  font-size: 15px;
+}
+
+.link-list-item {
+  align-items: center;
+  display: flex;
+  height: 2em;
+  justify-content: center;
+  line-height: 2em;
+  list-style-type: none;
+  margin: 1vh 0 1vh 0;
+  text-align: center;
+  width: 100%;
+}
+
+.link-list-item:hover {
+  background-color: #888;
+}
+
+.link {
+  color: #ddd;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.blue {
+  color: #48b1ff;
+}
+
+.red {
+  color: #ff6b6b;
+}
+
+.green {
+  color: #65ff66;
+}
+
+.purple {
+  color: #9348ff;
+}
+
+/* IDs */
+#clock {
+  font-family: Roboto;
+  color: #ddd;
+}
+
+#top-div {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  text-align: center;
+  padding: 0 5vw 0 5vw;
+}
+
+#search-form,
+#clock-div {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+#links-container {
+  display: grid;
+  justify-content: center;
+}
+
+/* Media Queries */
+@media only screen and (min-width: 600px) {
+  #links-container {
+    grid-column-gap: 10px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  #links-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0fr;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  #top-div {
+    color: #ddd;
+  }
+
+  #links-container {}
+}
+
+#todobox {
+  height: 60px;
+  width: 1000px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14pt;
+  text-align: center;
+}
