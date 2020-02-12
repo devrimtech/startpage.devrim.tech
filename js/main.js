@@ -21,13 +21,10 @@ const formElement = document.getElementById('search-form');
 function getDateTime() {
     const dateTime = new Date();
     let day = dateTime.getDate();
-    let month = dateTime.getMonth() + 1;
+    let month = dateTime.getMonth();
     let hour = dateTime.getHours();
     let minutes = dateTime.getMinutes();
     let seconds = dateTime.getSeconds();
-
-    let hourPST = hour - 7;
-    hour = hourPST;
 
     if (hour < 0) {
         hour = 24 + hour;
