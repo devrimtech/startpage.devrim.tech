@@ -69,6 +69,23 @@ function getDateTime() {
     return myTime;
 }
 
+function saveTodo() {
+    var todotext = document.getElementById('todobox').value;
+    localStorage.setItem("todo", todotext);
+}
+
+function populateTodo() {
+    // Populate todo box
+    var todo = localStorage.getItem("todo");
+    document.getElementById('todobox').innerHTML = todo;
+}
+
+function xkcd() {
+    randomComicId = Math.floor(Math.random() * Math.floor(2349));
+    console.log(randomComicId);
+    document.getElementById('xkcdFrame').src = `https://xkcd.com/101.html`;
+}
+
 function setClock() {
     clockElement.innerText = getDateTime();
 }

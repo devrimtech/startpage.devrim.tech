@@ -1,244 +1,110 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-        <meta charset="utf-8" />
-        <title>Startpage</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
-        <noscript>
-                <style>
-                        #clock {
-                                display: none;
-                        }
-                </style>
-        </noscript>
-        <script src="https://unpkg.com/@ungap/custom-elements-builtin"></script>
-        <script type="module" src="https://unpkg.com/x-frame-bypass"></script>
+    <meta charset="utf-8">
+    <meta name="author" content="https://github.com/0-l">
+    <link rel="stylesheet" type="text/css" href="css/awoo.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200|Roboto:100,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <title>~</title>
 </head>
 
-<body onload="populateTodo();">
-        <main>
-                <div id="top-div">
-                        <div id="clock-div">
-                                <h1 id="clock">
-                                        00/00/0000
-                                        00:00:00
-                                </h1>
-                        </div>
-                        <div id="todo">
-                                <h1 style="cursor: pointer;" onclick="saveTodo();"></h1>
-                                <iframe is="x-frame-bypass" name="I1" id="if1" width="100%" height="254"
-                                        style="visibility:visible" src="https://keep.google.com"></iframe>
-                        </div>
+<body>
+    <div id="search">
+        <div>
+            <input type="text" spellcheck="false" placeholder="search">
+            <button class="close"><i class="material-icons">&#xE5CD;</i></button>
+            <ul class="search-engines"></ul>
+        </div>
+    </div>
+    <div id="links" class="-">
+        <div id="tabs" class="!-">
+            <cols>
+                <ul class="- indicator">
+                    <li active></li>
+                </ul>
+                <div class="+ widgets col-end">
+                    <p class="time">00<span>:00</span></p>
+                    <div class="!+ + weather-config">
+                        <input name="color" type="text" placeholder="location">
+                    </div>
+                    <div class="+ weather">
+                        <button class="!+ edit">edit</button>
+                        <p temperature>4ºC</p>
+                        <p weather class="+">
+                            <i class="material-icons" sunny>wb_sunny</i>
+                        </p>
+                    </div>
                 </div>
-                <div id="links-container">
-                        <section class="link-section">
-                                <h2 class="link-section-title red">Reddit</h2>
-                                <hr />
-                                <ul class="link-list">
-                                        <li class="link-list-item"><a class="link"
-                                                        href="https://www.reddit.com/r/unixporn/">/r/ - UnixPorn</a>
-                                        </li>
-                                        <li class="link-list-item"><a class="link"
-                                                        href="https://www.reddit.com/r/coolguides/">/r/ -
-                                                        CoolGuides</a></li>
-                                        <li class="link-list-item"><a class="link"
-                                                        href="https://www.reddit.com/r/gamernews/">/r/ -
-                                                        GamerNews</a></li>
-                                        <li class="link-list-item"><a class="link"
-                                                        href="https://www.reddit.com/r/jailbreak/">/r/ -
-                                                        Jailbreak</a></li>
-                                        <li class="link-list-item"><a class="link"
-                                                        href="https://www.reddit.com/r/learnprogramming/">/r/ -
-                                                        Learn Programming</a></li>
-                                        <li class="link-list-item"><a class="link"
-                                                        href="https://www.reddit.com/r/todayilearned">/r/ - TodayILearned</a>
-                                        </li>
-                                        <li class="link-list-item"><a class="link"
-                                                        href="https://www.reddit.com/r/linuxmasterrace/">/r/ -
-                                                        LinuxMasterRace</a></li>
-                                        <li class="link-list-item"><a class="link"
-                                                        href="https://www.reddit.com/r/Piracy/">/r/ - Piracy</a>
-                                        </li>
-                                        <li class="link-list-item"><a class="link"
-                                                        href="https://www.reddit.com/r/programming/">/r/ -
-                                                        Programming</a></li>
-                                        <li class="link-list-item"><a class="link"
-                                                        href="https://www.reddit.com/r/technology/">/r/ -
-                                                        Technology</a></li>
-                                </ul>
-                        </section>
-
-                        <section class="link-section">
-                                <h2 class="link-section-title green">Programming</h2>
-                                <hr />
-                                <ul class="link-list">
-                                        <li class="link-list-item"><a class="link" href="https://github.com">GitHub</a>
-                                        </li>
-                                        <li class="link-list-item"><a class="link"
-                                                        href="https://www.codewars.com/dashboard">CodeWars</a>
-                                        </li>
-                                        <li class="link-list-item"><a class="link"
-                                                        href="https://www.educative.io/explore">Educative</a>
-                                        </li>
-                                        <li class="link-list-item"><a class="link"
-                                                        href="https://www.udemy.com/home/my-courses/learning/">Udemy</a>
-                                        </li>
-                                        <li class="link-list-item"><a class="link"
-                                                        href="https://courses.edx.org/dashboard">edX</a></li>
-                                        <li class="link-list-item"><a class="link"
-                                                        href="https://linuxjourney.com/">Linux Journey</a></li>
-                                        <li class="link-list-item"><a class="link"
-                                                        href="https://teamtreehouse.com/home">TeamTreehouse</a>
-                                        </li>
-                                </ul>
-                        </section>
-                        <section class="link-section">
-                                <h2 class="link-section-title purple">School</h2>
-                                <hr />
-                                <ul class="link-list">
-                                        <li class="link-list-item"><a class="link"
-                                                        href="http://mail.google.com">Gmail</a></li>
-                                        <li class="link-list-item"><a class="link"
-                                                        href="https://m3a.vhlcentral.com/courses/624222/sections/808988?ticket=ST-1576221820r53ACD846B71F96BF8A">VHL
-                                                        Central</a></li>
-                                        <li class="link-list-item"><a class="link"
-                                                        href="https://classroom.powerschool.com/dashboard">PowerSchool</a>
-                                        </li>
-                                        <li class="link-list-item"><a class="link"
-                                                        href="http://translate.google.com">Google Translate</a>
-                                        </li>
-                                        <li class="link-list-item"><a class="link"
-                                                        href="https://drive.google.com/drive/my-drive">Google
-                                                        Drive</a></li>
-                                        <li class="link-list-item"><a class="link"
-                                                        href="https://docs.google.com/document/u/0/?tgif=d">Google
-                                                        Docs</a></li>
-                                        <li class="link-list-item"><a class="link"
-                                                        href="https://docs.google.com/presentation/u/0/?tgif=d">Google
-                                                        Slides</a></li>
-                                        <li class="link-list-item"><a class="link"
-                                                        href="http://www.upasv.org/">UPAsv</a></li>
-                                        <li class="link-list-item"><a class="link"
-                                                        href="https://www.mathxlforschool.com/Student/Dashboard.aspx">MathXL</a>
-                                        </li>
-                                        <li class="link-list-item"><a class="link"
-                                                        href="https://www.wolframalpha.com/">Wolfram Alpha</a>
-                                        </li>
-                                </ul>
-                        </section>
-                        <section class="link-section">
-                                <h2 class="link-section-title blue">Awesome Lists</h2>
-                                <hr />
-                                <ul class="link-list">
-                                        <li class="link-list-item"><a class="link"
-                                                        href="https://github.com/yrgo/awesome-eg">Educational
-                                                        Games</a></li>
-                                        <li class="link-list-item"><a class="link"
-                                                        href="https://github.com/terkelg/awesome-creative-coding#readme">Creative
-                                                        Coding</a></li>
-                                        <li class="link-list-item"><a class="link"
-                                                        href="https://github.com/EbookFoundation/free-programming-books/blob/master/free-programming-books.md">Free
-                                                        Programming Books</a></li>
-                                        <li class="link-list-item"><a class="link"
-                                                        href="https://github.com/jbranchaud/resources">Learning
-                                                        Resources</a></li>
-                                        <li class="link-list-item"><a class="link"
-                                                        href="https://github.com/sdmg15/Best-websites-a-programmer-should-visit">Sites
-                                                        about
-                                                        Programming</a></li>
-                                        <li class="link-list-item"><a class="link"
-                                                        href="https://awesomelists.top">Awesome Search</a></li>
-                                        <li class="link-list-item"><a class="link"
-                                                        href="https://github.com/danistefanovic/build-your-own-x">Build
-                                                        Anything</a></li>
-                                        <li class="link-list-item"><a class="link"
-                                                        href="https://cdn.discordapp.com/attachments/267624335836053506/512380391060144148/1533339804771.png">Programming
-                                                        Challenges</a></li>
-                                        <li class="link-list-item"><a class="link"
-                                                        href="https://github.com/mauriciovieira/awesome-challenges">More
-                                                        Challenges</a></li>
-                                        <li class="link-list-item"><a class="link"
-                                                        href="https://github.com/lucasviola/awesome-tech-videos">Tech
-                                                        Videos</a></li>
-                                        <li class="link-list-item"><a class="link"
-                                                        href="https://github.com/prakhar1989/awesome-courses">Awesome
-                                                        Courses</a></li>
-                                </ul>
-                        </section>
-                        <section class="link-section">
-                                <h2 class="link-section-title green">Fun</h2>
-                                <hr />
-                                <ul class="link-list">
-                                        <li class="link-list-item"><a class="link" href="https://twist.moe">TwistMoe</a>
-                                        </li>
-                                        <li class="link-list-item"><a class="link"
-                                                        href="http://myanimelist.net/">MyAnimeList</a>
-                                        </li>
-                                        <li class="link-list-item"><a class="link"
-                                                        href="https://flexboxfroggy.com/">Flexbox Froggy</a></li>
-                                        <li class="link-list-item"><a class="link"
-                                                        href="http://www.flexboxdefense.com">Flexbox Defense</a>
-                                        </li>
-                                        <li class="link-list-item"><a class="link"
-                                                        href="https://checkio.org/">CheckIO</a></li>
-                                        <li class="link-list-item"><a class="link"
-                                                        href="https://github.com/leereilly/games">GitHub
-                                                        Games</a></li>
-
-                                </ul>
-                        </section>
-                        <section class="link-section">
-                                <h2 class="link-section-title purple">Reading</h2>
-                                <hr />
-                                <ul class="link-list">
-                                        <li class="link-list-item"><a class="link" href="https://libgen.is/">LibGen</a>
-                                        </li>
-                                        <li class="link-list-item"><a class="link"
-                                                        href="https://github.com/RichardLitt/awesome-fantasy">Fantasy
-                                                        Books</a></li>
-                                        <li class="link-list-item"><a class="link"
-                                                        href="https://github.com/dhamaniasad/awesome-webcomics">Webcomics</a>
-                                        </li>
-                                        <li class="link-list-item"><a class="link"
-                                                        href="https://github.com/isaacs/reading-list">Reading
-                                                        List</a></li>
-                                        <li class="link-list-item"><a class="link"
-                                                        href="https://github.com/aleksandar-todorovic/awesome-linux">Linux</a>
-                                        </li>
-                                        <li class="link-list-item"><a class="link"
-                                                        href="https://github.com/watson/awesome-computer-history">Computer
-                                                        History</a></li>
-                                        <li class="link-list-item"><a class="link" href="https://xkcd.com">xkcd</a></li>
-                                        <li class="link-list-item"><a class="link"
-                                                        href="https://wikipedia.com">Wikipedia</a></li>
-                                        <li class="link-list-item"><a class="link"
-                                                        href="https://devrant.com">DevRant</a></li>
-                                        <li class="link-list-item"><a class="link" href="https://viz.com">Shonen
-                                                        Jump</a></li>
-                                        <li class="link-list-item"><a class="link"
-                                                        href="https://mangakakalot.com/">MangaKakalot</a>
-                                        </li>
-                                </ul>
-                        </section>
+            </cols>
+        </div>
+        <div id="panels">
+            <ul class="Reddit" active>
+                <div class="links">
+                    <li>
+                        <h1>Fun</h1>
+                        <a href="https://4chan.org/a/">/a/</a>
+                        <a href="https://4chan.org/lit/">/lit/</a>
+                        <a href="https://4chan.org/jp/">/jp/</a>
+                        <a href="https://4chan.org/r9k/">/r9k/</a>
+                        <a href="https://www.4chan.org/wg/">/wg/</a>
+                    </li>
+                    <li>
+                        <h1>Comfy</h1>
+                        <a href="https://sushigirl.us/kawaii/">/kawaii/</a>
+                        <a href="https://sushigirl.us/lounge/">/lounge/</a>
+                        <a href="https://www.4chan.org/wsg/">/wsg/</a>
+                    </li>
+                    <li>
+                        <h1>Technology</h1>
+                        <a href="https://4chan.org/g/">/g/</a>
+                        <a href="https://www.lainchan.org/lambda/">/λ/</a>
+                        <a href="https://www.lainchan.org/sec/">/sec/</a>
+                        <a href="https://boards.420chan.org/prog/">/prog/</a>
+                        <a href="https://8ch.net/g/">/8g/</a>
+                    </li>
                 </div>
-        </main>
-
-
-        <script src="js/main.js"></script>
-        <script>
-                function saveTodo() {
-                        var todotext = document.getElementById('todobox').value;
-                        localStorage.setItem("todo", todotext);
-                }
-
-                function populateTodo() {
-                        // Populate todo box
-                        var todo = localStorage.getItem("todo");
-                        document.getElementById('todobox').innerHTML = todo;
-                }
-        </script>
+            </ul>
+            <ul class="music">
+                <div class="links">
+                    <li>
+                        <h1>Fun</h1>
+                        <a href="https://4chan.org/a/">/a/</a>
+                        <a href="https://4chan.org/lit/">/lit/</a>
+                        <a href="https://4chan.org/jp/">/jp/</a>
+                        <a href="https://4chan.org/r9k/">/r9k/</a>
+                        <a href="https://www.4chan.org/wg/">/wg/</a>
+                    </li>
+                </div>
+            </ul>
+            <ul class="tech">
+                <div class="links">
+                    <li><a href="https://arisuchan.jp/">arisuchan</a></li>
+                    <li><a href="https://systemspace.link/">つき</a></li>
+                    <li><a href="https://docs.racket-lang.org/">racket</a></li>
+                    <li><a href="https://stallman.org/">stallman</a></li>
+                    <li><a href="http://afternoon.dynu.com/letterbox.html">post office</a></li>
+                </div>
+            </ul>
+        </div>
+    </div>
+    <div class="|" id="todo">
+        <button class="+ add"><img src="img/add.png"></button>
+        <div class="+ addTodo">
+            <input type="text" value="" placeholder="todo" spellcheck="false">
+        </div>
+        <rows class="items">
+            <h1 class="+">To Do</h1>
+        </rows>
+    </div>
+    <script type="text/javascript" src="js/strftime.js"></script>
+    <script type="text/javascript" src="js/todo.js"></script>
+    <script type="text/javascript" src="js/weather.js"></script>
+    <script type="text/javascript" src="js/powerline.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/search.js"></script>
 </body>
 
 </html>
